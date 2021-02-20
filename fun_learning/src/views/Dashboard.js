@@ -62,13 +62,14 @@ const useStyles = makeStyles((theme) => ({
 
 const cards = [1, 2, 3];
 
-export default function Album() {
+export default function Album(props) {
   const classes = useStyles();
+  const {user, logout} = props;
 
   return (
     <React.Fragment>
       <CssBaseline />
-      <Header/>
+      <Header user={user} logout={logout}/>
       <main>
         {/* Hero unit */}
         <Button className="get-started" variant="contained" color="primary">
