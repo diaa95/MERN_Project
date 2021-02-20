@@ -4,6 +4,9 @@ require('dotenv').config()
 const bcrypt = require('bcrypt');
 
 module.exports.register= (req, res) => {
+    //this method registers a new user to the database
+    //then saves the userToken in the cookie
+    //and responses with json containing success msg and user object
     const bob = new User(req.body);
     bob.save()
     .then(user => {
@@ -19,18 +22,22 @@ module.exports.register= (req, res) => {
 }
 
 module.exports.getAllUsers=(req,res) =>{
+    //this method retrieves all users
     User.find()
     .then(all =>res.json(all))
     .catch(err =>res.json(err));
 }
 
 module.exports.findOneUser=(req,res) =>{
-    User.findOne({_id:req.params.id}).populate("books")
+    //this method retrieves one specific user by user id
+    User.findOne({_id:req.params.id})
     .then(user=>res.json(user))
     .catch(err=>res.json(err))
 }
 
 module.exports.removeAll = (req, res)=>{
+    //this method is used for development purposes only
+    //this removes all users from the database
     User.remove()
     .then(deletedUsers => {
         res.json({'sucsess': "succesfully deleted all users"})
@@ -67,8 +74,7 @@ module.exports.login=async(req, res) => {
 }
 
 module.exports.logout = (req, res) => {
-    // console.log(req.headers);
-    console.log('kkkkkkkkkkk');
+    //clears userToken from cookies
     res.clearCookie("usertoken");
     res.sendStatus(200);
 }
