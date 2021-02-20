@@ -1,5 +1,5 @@
 import React from "react";
-import Footer from './Footer'
+import Footer from "./Footer";
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
@@ -12,18 +12,15 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import DashboardMain from "../static/img/dashboard_main.jpg";
 import Variable from "../static/img/variable_icon.png";
-import Header from './Header';
-
-
-
+import Header from "./Header";
 
 const useStyles = makeStyles((theme) => ({
   icon: {
     marginRight: theme.spacing(2),
   },
   heroContent: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(8, 0, 6),
+    padding: "0 !important",
+    backgroundColor: "#ebcd8f !important",
   },
   heroButtons: {
     marginTop: theme.spacing(4),
@@ -49,12 +46,12 @@ const cards = [1, 2, 3];
 
 export default function Album(props) {
   const classes = useStyles();
-  const {user, logout} = props;
+  const { user, logout } = props;
 
   return (
     <React.Fragment>
       <CssBaseline />
-      <Header user={user} logout={logout}/>
+      <Header user={user} logout={logout} />
       <main>
         {/* Hero unit */}
         <Button className="get-started" variant="contained" color="primary">
@@ -71,7 +68,7 @@ export default function Album(props) {
               color="textPrimary"
               gutterBottom
             >
-              Small Coder
+              Young Coder
             </Typography>
             <Typography
               variant="h5"
@@ -115,7 +112,7 @@ export default function Album(props) {
           </Grid>
         </Container>
       </main>
-      <Footer/>
+      <Footer />
     </React.Fragment>
   );
 }
