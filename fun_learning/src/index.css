@@ -29,7 +29,7 @@ button {
 
 .get-started {
   position: absolute !important;
-  margin-left: -400px !important;
+  margin-left: 97px !important;
   margin-top: 100px !important;
 }
 
@@ -61,4 +61,15 @@ button {
 .logo-login,
 .logo-register {
   width: 250px;
+}
+
+.carousel-img {
+  width: 100%;
+  height: 430px;
+  object-fit: cover;
+}
+
+span.sr-only,
+ol.carousel-indicators {
+  display: none;
 }
