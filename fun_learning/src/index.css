@@ -33,6 +33,32 @@ button {
   margin-top: 100px !important;
 }
 
+.loginButton,
 .play-button {
   color: white !important;
+}
+
+.loginBigButton,
+.logoutButton {
+  margin-left: auto !important;
+  margin-right: 1% !important;
+}
+
+.secondary-button {
+  background-color: white !important;
+  border: 2px solid #e64571 !important;
+}
+
+.registrationButton {
+  color: #e64571 !important;
+}
+
+.logo {
+  width: 55px;
+  margin-right: 2%;
+}
+
+.logo-login,
+.logo-register {
+  width: 250px;
 }

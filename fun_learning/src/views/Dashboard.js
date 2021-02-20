@@ -68,7 +68,7 @@ export default function Album(props) {
               color="textPrimary"
               gutterBottom
             >
-              Small Coder
+              Young Coder
             </Typography>
             <Typography
               variant="h5"
