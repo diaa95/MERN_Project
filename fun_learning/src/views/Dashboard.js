@@ -1,4 +1,5 @@
 import React from "react";
+import Footer from './Footer'
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
@@ -9,23 +10,11 @@ import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
-import Link from "@material-ui/core/Link";
 import DashboardMain from "../static/img/dashboard_main.jpg";
 import Variable from "../static/img/variable_icon.png";
 import Header from './Header';
 
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -54,21 +43,18 @@ const useStyles = makeStyles((theme) => ({
   cardContent: {
     flexGrow: 1,
   },
-  footer: {
-    backgroundColor: theme.palette.background.paper,
-    padding: theme.spacing(6),
-  },
 }));
 
 const cards = [1, 2, 3];
 
-export default function Album() {
+export default function Album(props) {
   const classes = useStyles();
+  const {user, logout} = props;
 
   return (
     <React.Fragment>
       <CssBaseline />
-      <Header/>
+      <Header user={user} logout={logout}/>
       <main>
         {/* Hero unit */}
         <Button className="get-started" variant="contained" color="primary">
@@ -129,22 +115,7 @@ export default function Album() {
           </Grid>
         </Container>
       </main>
-      {/* Footer */}
-      <footer className={classes.footer}>
-        <Typography variant="h6" align="center" gutterBottom>
-          Footer
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          align="center"
-          color="textSecondary"
-          component="p"
-        >
-          Something here to give the footer a purpose!
-        </Typography>
-        <Copyright />
-      </footer>
-      {/* End footer */}
+      <Footer/>
     </React.Fragment>
   );
 }
