@@ -17,6 +17,7 @@ import Loop from "../static/img/loop_icon.png";
 import Header from "./Header";
 import Description from "./LevelsDescription";
 import Level from "./Level";
+import {navigate} from "@reach/router";
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -35,6 +36,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+const clickHandler = () =>{
+  navigate("/firstLevel");
+}
+
 export default function Album(props) {
   const classes = useStyles();
   const { user, logout } = props;
@@ -45,7 +50,7 @@ export default function Album(props) {
       <Header user={user} logout={logout} />
       <main>
         {/* Hero unit */}
-        <Button className="get-started" variant="contained" color="primary">
+        <Button className="get-started" variant="contained" color="primary" onClick={clickHandler}>
           Get Started
         </Button>
         <img className="dashboardMain" src={DashboardMain} />
