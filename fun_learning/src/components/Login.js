@@ -116,7 +116,7 @@ export default (props) => {
             </Button>
             <Grid container>
               <Grid item>
-                <Link href="/register" to={"/"} variant="body2">
+                <Link href="/register" to={"/dashboard"} variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>

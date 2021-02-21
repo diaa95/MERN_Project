@@ -12,11 +12,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import DashboardMain from "../static/img/dashboard_main.jpg";
 import Variable from "../static/img/variable_icon.png";
-import If from "../static/img/if_icon.png";
-import Loop from "../static/img/loop_icon.png";
 import Header from "./Header";
-import Description from "./LevelsDescription";
-import Level from "./Level";
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -33,7 +29,20 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: theme.spacing(8),
     paddingBottom: theme.spacing(8),
   },
+  card: {
+    height: "100%",
+    display: "flex",
+    flexDirection: "column",
+  },
+  cardMedia: {
+    paddingTop: "56.25%", // 16:9
+  },
+  cardContent: {
+    flexGrow: 1,
+  },
 }));
+
+const cards = [1, 2, 3];
 
 export default function Album(props) {
   const classes = useStyles();
@@ -43,22 +52,33 @@ export default function Album(props) {
     <React.Fragment>
       <CssBaseline />
       <Header user={user} logout={logout} />
-      <main>
-        {/* Hero unit */}
-        <Button className="get-started" variant="contained" color="primary">
-          Get Started
-        </Button>
-        <img className="dashboardMain" src={DashboardMain} />
-        <Description />
-        <Container className={classes.cardGrid} maxWidth="md">
-          {/* End hero unit */}
-          <Grid container spacing={4}>
-            <Level image={Variable} title="Level1" description="description1" />
-            <Level image={If} title="Level2" description="description2" />
-            <Level image={Loop} title="Level3" description="description3" />
-          </Grid>
+
+      <div className={classes.heroContent}>
+        <Container maxWidth="sm">
+          <Typography
+            component="h1"
+            variant="h2"
+            align="center"
+            color="textPrimary"
+            gutterBottom
+          >
+            First Level
+          </Typography>
+          <Typography
+            variant="h5"
+            align="center"
+            color="textSecondary"
+            paragraph
+          >
+            Our website aims to teach your child how to think logically, to
+            prepare a powerful coder for the Future!
+          </Typography>
         </Container>
-      </main>
+      </div>
+      <Container className={classes.cardGrid} maxWidth="md">
+        {/* End hero unit */}
+        <Grid container spacing={4}></Grid>
+      </Container>
       <Footer />
     </React.Fragment>
   );
