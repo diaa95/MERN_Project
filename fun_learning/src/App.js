@@ -3,66 +3,74 @@ import "./App.css";
 import Dashboard from "./views/Dashboard";
 import Login from "./components/Login";
 import Registration from "./components/Registration";
-import Cookies from "universal-cookie";
 import { navigate, Router } from "@reach/router";
 import axios from "axios";
 import Home from "./views/Home";
-import FirstLevel from "./views/FirstLevel";
+import { connect } from "react-redux";
 
-function App() {
-  const [registered, setRegistered] = useState(false);
-  const [user, setUser] = useState({});
 
-  const cookies = new Cookies();
+const App = (props) => {
+  // const [registered, setRegistered] = useState(false);
+  // const [user, setUser] = useState({});
 
-  useEffect(() => {
-    if (cookies.get("user")) {
-      const user = cookies.get("user");
-      setUser(user);
-    } else setUser({});
-  }, [registered]);
+  // const cookies = new Cookies();
 
-  const allowHandler = (user) => {
-    axios
-      .get("http://localhost:8000/api/" + user._id, { withCredentials: true })
-      .then((response) => {
-        cookies.set("user", response.data);
-        setRegistered(() => true);
-      })
-      .catch((error) => console.log("There was an issue: ", error));
-  };
+  // useEffect(() => {
+  //   if (cookies.get("user")) {
+  //     const user = cookies.get("user");
+  //     setUser(user);
+  //   } else setUser({});
+  // }, [registered]);
+
+  // const allowHandler = (user) => {
+  //   axios
+  //     .get("http://localhost:8000/api/" + user._id, { withCredentials: true })
+  //     .then((response) => {
+  //       cookies.set("user", response.data);
+  //       setRegistered(() => true);
+  //     })
+  //     .catch((error) => console.log("There was an issue: ", error));
+  // };
 
   const logout = () => {
     axios
-      .post(
-        "http://localhost:8000/api/logout",
-        { logOut: "logout" },
-        { withCredentials: true }
-      )
-      .then(() => {
-        cookies.remove("user", { path: "/" });
-      })
-      .then(() => {
-        setRegistered(() => false);
-        navigate("/");
-      });
+        .post(
+            "http://localhost:8000/api/logout",
+            { logOut: "logout" },
+            { withCredentials: true }
+        )
+        .then(() => {
+          props.logout();
+        })
+
   };
 
   return (
-    <div className="App">
-      {!user._id ? (
-        <>
-          <Router>
-            <Home path={"/"} />
-            <Registration path={"/register"} allow={allowHandler} />
-            <Login path={"/login"} allow={allowHandler} />
-          </Router>
-        </>
-      ) : (
-        <Dashboard user={user} path={"/dashboard"} logout={logout} />
-      )}
-    </div>
+      <div className="App">
+        {!props.user._id ? (
+            <>
+
+              <Router>
+                <Home path={"/"} />
+                <Registration path={"/register"} />
+                <Login path={"/login"} />
+              </Router>
+            </>
+        ) : (
+            <Dashboard user={props.user} path={"/dashboard"} logout={logout} />
+        )}
+      </div>
   );
 }
+const mapStateToProps = state => {
+  return {
+    user: state.user
+  };
+};
 
-export default App;
+const mapDispatchToProps = dispatch => {
+  return {
+    logout: () => dispatch({ type: "LOG_OUT" }),
+  };
+};
+export default connect(mapStateToProps, mapDispatchToProps)(App);

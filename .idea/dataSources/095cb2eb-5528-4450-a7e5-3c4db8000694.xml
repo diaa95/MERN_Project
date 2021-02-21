@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="@localhost">
+  <database-model serializer="dbm" dbms="MONGO" family-id="MONGO" format-version="4.20">
+    <root id="1">
+      <ServerVersion>4.4.3</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="FunLearn"/>
+    <schema id="3" parent="1" name="admin"/>
+    <schema id="4" parent="1" name="auth"/>
+    <schema id="5" parent="1" name="authorsDB"/>
+    <schema id="6" parent="1" name="config"/>
+    <schema id="7" parent="1" name="jokesDb"/>
+    <schema id="8" parent="1" name="local"/>
+    <schema id="9" parent="1" name="products_manager"/>
+    <table id="10" parent="2" name="users"/>
+    <column id="11" parent="10" name="_id">
+      <DataType>ObjectId(0)|12s</DataType>
+    </column>
+    <column id="12" parent="10" name="__v">
+      <Position>1</Position>
+      <DataType>Integer|4s</DataType>
+    </column>
+    <column id="13" parent="10" name="createdAt">
+      <Position>2</Position>
+      <DataType>Date(0)|91s</DataType>
+    </column>
+    <column id="14" parent="10" name="email">
+      <Position>3</Position>
+      <DataType>String(0)|12s</DataType>
+    </column>
+    <column id="15" parent="10" name="firstName">
+      <Position>4</Position>
+      <DataType>String(0)|12s</DataType>
+    </column>
+    <column id="16" parent="10" name="lastName">
+      <Position>5</Position>
+      <DataType>String(0)|12s</DataType>
+    </column>
+    <column id="17" parent="10" name="password">
+      <Position>6</Position>
+      <DataType>String(0)|12s</DataType>
+    </column>
+    <column id="18" parent="10" name="updatedAt">
+      <Position>7</Position>
+      <DataType>Date(0)|91s</DataType>
+    </column>
+  </database-model>
+</dataSource>
