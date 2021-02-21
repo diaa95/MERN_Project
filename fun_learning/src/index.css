@@ -18,11 +18,6 @@ code {
   height: 40%;
 }
 
-.makeStyles-heroContent-2 {
-  padding: 0 !important;
-  background-color: #ebcd8f !important;
-}
-
 header,
 footer {
   background-color: #bbd7ae !important;
@@ -34,10 +29,47 @@ button {
 
 .get-started {
   position: absolute !important;
-  margin-left: -400px !important;
+  margin-left: 97px !important;
   margin-top: 100px !important;
 }
 
+.loginButton,
 .play-button {
   color: white !important;
+}
+
+.loginBigButton,
+.logoutButton {
+  margin-left: auto !important;
+  margin-right: 1% !important;
+}
+
+.secondary-button {
+  background-color: white !important;
+  border: 2px solid #e64571 !important;
+}
+
+.registrationButton {
+  color: #e64571 !important;
+}
+
+.logo {
+  width: 55px;
+  margin-right: 2%;
+}
+
+.logo-login,
+.logo-register {
+  width: 250px;
+}
+
+.carousel-img {
+  width: 100%;
+  height: 430px;
+  object-fit: cover;
+}
+
+span.sr-only,
+ol.carousel-indicators {
+  display: none;
 }
