@@ -1,18 +1,19 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import Avatar from "@material-ui/core/Avatar";
+import { connect } from "react-redux";
+
 import Button from "@material-ui/core/Button";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
-import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import Copyright from "../views/Copyright";
 import Logo from "../static/img/logo.png";
+import {navigate} from "@reach/router";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -29,7 +30,7 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(3, 0, 2),
   },
 }));
-export default (props) => {
+const Registration = (props) => {
   const classes = useStyles();
 
   const [firstName, setFirstName] = useState("");
@@ -54,6 +55,7 @@ export default (props) => {
       )
       .then((res) => {
         props.allow(res.data.user);
+        navigate('/')
       })
       .catch((err) => {
         const errorResponse = err.response.data.errors; // Get the errors from err.response.data
@@ -160,3 +162,18 @@ export default (props) => {
     </>
   );
 };
+
+const mapStateToProps = state => {
+  return {
+    user: state.user
+  };
+};
+
+
+const mapDispatchToProps = dispatch => {
+  return {
+    allow: (user) => dispatch({ type: "LOG_IN", user: user }),
+  };
+};
+
+export default connect( mapStateToProps, mapDispatchToProps )(Registration);
