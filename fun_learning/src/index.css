@@ -101,13 +101,13 @@ rect.blocklyMainBackground {
   background-color: #ebcd8f !important;
 }
 
-pre#generated-xml {
-  display: none;
-}
+/*pre#generated-xml {*/
+/*  display: none;*/
+/*}*/
 
-textarea#code {
-  display: none;
-}
+/*textarea#code {*/
+/*  display: none;*/
+/*}*/
 
 .makeStyles-fillHeight-8 {
   display: inline-block;
@@ -116,58 +116,4 @@ textarea#code {
 .level-description,
 .app-description {
   text-align: left !important;
-}
-
-.SoundButton{
-  width: 120px;
-  height: 140px;
-  color: #fff;
-  font-size: 3em;
-  text-align: center;
-  vertical-align: middle;
-  line-height: 140px;
-}
-
-.mdl-button {
-  margin: 1em 0;
-  float: right;
-}
-
-.mode-edit,
-.mode-maker,
-.mode-blockly {
-  display: none;
-}
-
-[mode="maker"] .mode-maker,
-[mode="edit"] .mode-edit,
-[mode="blockly"] .mode-blockly {
-  display: block;
-}
-
-.blockly-editor {
-  position: absolute;
-  top: 64px;
-  left: -400px;
-  transition: left .4s;
-  height: 460px;
-  width: 400px;
-  background-color: #eee;
-}
-
-[mode="blockly"] .blockly-editor {
-  left: 0;
-}
-
-.maker {
-  display: flex;
-  flex-flow: column;
-  justify-content: space-between;
-  height: 1000px;
-  width: 400px;
-}
-
-.maker > div {
-  display: flex;
-  justify-content: space-between;
 }
