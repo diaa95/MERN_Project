@@ -7,7 +7,8 @@ import { navigate, Router } from "@reach/router";
 import axios from "axios";
 import Home from "./views/Home";
 import { connect } from "react-redux";
-import FirstLevel from './views/FirstLevel';
+import FirstLevel from './levels/FirstLevel';
+import SecondLevel from "./levels/SecondLevel";
 
 
 const App = (props) => {
@@ -61,6 +62,7 @@ const App = (props) => {
             <Router>
             <Dashboard path={'/'} user={props.user} logout={logout} />
             <FirstLevel path={'firstLevel'} user={props.user}/>
+            <SecondLevel path={'/secondLevel'} />
             </Router>
         )}
       </div>

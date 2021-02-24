@@ -1,5 +1,7 @@
+
+
 import React from "react";
-import Footer from "./Footer";
+import Footer from "../views/Footer";
 import Button from "@material-ui/core/Button";
 import Card from "@material-ui/core/Card";
 import CardActions from "@material-ui/core/CardActions";
@@ -12,7 +14,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import DashboardMain from "../static/img/dashboard_main.jpg";
 import Variable from "../static/img/variable_icon.png";
-import Header from "./Header";
+import Header from "../views/Header";
 import ReactBlockly from 'react-blockly'
 import Blockly from 'blockly';
 
@@ -54,7 +56,7 @@ export default function Album(props) {
   const classes = useStyles();
   const { user, logout } = props;
 
-  const initialXml = '<xml xmlns="http://www.w3.org/1999/xhtml"><block type="text" x="70" y="30"><field name="TEXT"></field></block></xml>';
+  const initialXml = `<xml xmlns="https://developers.google.com/blockly/xml"><block type="controls_if" id="R[(|i4h.QXRkym:{a*Zh" x="110" y="70"></block><block type="colour_rgb" id="!tkVB/bUB(uh*Rc{[n2L" x="206" y="104"></block></xml>`
   const toolboxCategories = [
     {
       name: 'Logic',
