@@ -78,13 +78,13 @@ export default function Album(props) {
               image={If}
               title="Level 2"
               description="Some gaming challenges based on the concepts that we learned in the first level"
-              redirect="/secondLevel"
+              redirect="/animation"
             />
             <Level
               image={Loop}
               title="Level 3"
               description="Musical game to build some music using blocks"
-              redirect="/thirdLevel"
+              redirect="/sound"
             />
           </Grid>
         </Container>

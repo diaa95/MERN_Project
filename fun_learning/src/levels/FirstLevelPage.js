@@ -49,7 +49,7 @@ export default function Album(props) {
   const { user, logout } = props;
   const [result, setResult] = useState("");
 
-  const initialXml = `<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable id="s,o~Fq{.WT1~Gtn24*]}">Steps</variable></variables><block type="variables_set" id="-b+C,,dSEh3D,jP\`w9M/" x="247" y="68"><field name="VAR" id="s,o~Fq{.WT1~Gtn24*]}">Steps</field><value name="VALUE"><block type="math_number" id="[m:I.YlMsrtyL?b9q/RU"><field name="NUM">0</field></block></value></block></xml>`;
+  const initialXml = `<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable id="s,o~Fq{.WT1~Gtn24*]}">Steps</variable></variables><block type="variables_set" id="-b+C,,dSEh3D,jP\`w9M/" x="128" y="150"><field name="VAR" id="s,o~Fq{.WT1~Gtn24*]}">Steps</field><value name="VALUE"><block type="math_number" id="[m:I.YlMsrtyL?b9q/RU"><field name="NUM">0</field></block></value></block></xml>`;
 
   // const initialXml = `<xml xmlns="https://developers.google.com/blockly/xml"></xml>`;
 
