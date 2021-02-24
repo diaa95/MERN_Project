@@ -17,7 +17,7 @@ module.exports = app =>{
 
     //this method retrieves json containing all users in the database
     //Can't be access if not logged in
-    app.get("/api/allUsers", authenticate, UserController.getAllUsers);
+    app.get("/api/allUsers", UserController.getAllUsers);
 
     //this method retrieves json containing one specific user
     //accepts user _id under as request params

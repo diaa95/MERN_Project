@@ -35,7 +35,7 @@ import Animation from "./Animation";
 import {navigate} from "@reach/router";
 // import ScriptText from "../../public/script.txt";
 
-class FirstLevel extends React.Component {
+class AnimationFirstLevel extends React.Component {
     constructor(props) {
         super(props);
         this.simpleWorkspace = React.createRef();
@@ -85,4 +85,4 @@ class FirstLevel extends React.Component {
     }
 }
 
-export default FirstLevel;
+export default AnimationFirstLevel;
