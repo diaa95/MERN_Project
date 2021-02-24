@@ -27,6 +27,7 @@ const Description = () => {
         <Typography variant="h5" align="center" color="textSecondary" paragraph>
           Our website aims to teach your child how to think logically, to
           prepare a powerful coder for the Future!
+          
         </Typography>
       </Container>
     </div>

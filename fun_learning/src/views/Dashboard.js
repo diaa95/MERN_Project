@@ -17,7 +17,9 @@ import Loop from "../static/img/loop_icon.png";
 import Header from "./Header";
 import Description from "./LevelsDescription";
 import Level from "./Level";
-import { navigate } from "@reach/router";
+import {navigate} from "@reach/router";
+import CardForLevel from "./CardForLevel"
+// import { navigate } from "@reach/router";
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -48,6 +50,7 @@ export default function Album(props) {
     <React.Fragment>
       <CssBaseline />
       <Header user={user} logout={logout} />
+     
       <main>
         {/* Hero unit */}
         <Button
@@ -60,8 +63,10 @@ export default function Album(props) {
         </Button>
         <img className="dashboardMain" src={DashboardMain} />
         <Description />
+        <CardForLevel/>
         <Container className={classes.cardGrid} maxWidth="md">
           {/* End hero unit */}
+          
           <Grid container spacing={4}>
             <Level
               image={Variable}
@@ -84,6 +89,7 @@ export default function Album(props) {
           </Grid>
         </Container>
       </main>
+     
       <Footer />
     </React.Fragment>
   );
