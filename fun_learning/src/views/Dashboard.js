@@ -72,7 +72,7 @@ export default function Album(props) {
               image={Variable}
               title="Level 1"
               description="Challenges that help you to understand main concepts in coding"
-              redirect="/firstLevel"
+              redirect="/comics"
             />
             <Level
               image={If}
