@@ -6,15 +6,22 @@ import React from "react";
 import {connect} from "react-redux";
 
 const Comical = (props) =>{
-    const upgrade =()=>{
-        let newUser = {...props.user};
-        newUser.score.comic +=1;
-        props.upgrade(newUser);
+    const upgrade =(result)=>{
+
+
+        let x = result.split('field')
+        console.log(x[3]);
+        if(x[3] === ' name="NUM">10</'){
+            let newUser = {...props.user};
+            newUser.score.comic +=1;
+            props.upgrade(newUser);
+        }
+
     }
      return(
          <>
              {props.user.score.comic ===1?
-                 <FirstLevelPage
+                 <FirstLevelPage Upgrade={upgrade}
                  user={props.user}
                  logout={props.logout}
              />:props.user.score.comic ===2?
@@ -27,7 +34,6 @@ const Comical = (props) =>{
                  logout={props.logout}
                  />:<h1>You are ready!</h1>
              }
-             <button onClick={ upgrade }>Upgrade</button>
          </>
      )
 };
