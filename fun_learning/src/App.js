@@ -12,6 +12,7 @@ import SecondLevelPage from "./levels/SecondLevelPage";
 import ThirdLevelPage from "./levels/ThirdLevelPage";
 import AnimationFirstLevel from "./levels/AnimationFirstLevel";
 import Comical from "./levels/Comical";
+import AnimationGuide from "./levels/AnimationGuide";
 
 const App = (props) => {
   // const [registered, setRegistered] = useState(false);
@@ -62,7 +63,7 @@ const App = (props) => {
         <Router>
           <Dashboard path={"/"} user={props.user} logout={logout} />
           <Comical path={'/comics'}/>
-          <AnimationFirstLevel path={"/AnimationFirstLevel"} />
+          <AnimationGuide path={"/animation"} />
         </Router>
       )}
     </div>

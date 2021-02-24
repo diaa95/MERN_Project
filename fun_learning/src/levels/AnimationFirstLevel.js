@@ -35,6 +35,11 @@ import Animation from "./Animation";
 import {navigate} from "@reach/router";
 // import ScriptText from "../../public/script.txt";
 
+
+
+
+
+
 class AnimationFirstLevel extends React.Component {
     constructor(props) {
         super(props);

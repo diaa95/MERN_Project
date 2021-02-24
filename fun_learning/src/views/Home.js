@@ -4,7 +4,6 @@ import Footer from "./Footer";
 import Link from "@material-ui/core/Link";
 import Carousel from "../components/Carousel";
 import Description from "./WebDescription";
-
 const Home = () => {
   const user = { firstName: "Young Coder" };
   return (
