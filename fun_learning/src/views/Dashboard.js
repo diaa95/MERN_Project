@@ -17,7 +17,7 @@ import Loop from "../static/img/loop_icon.png";
 import Header from "./Header";
 import Description from "./LevelsDescription";
 import Level from "./Level";
-import {navigate} from "@reach/router";
+import { navigate } from "@reach/router";
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -36,9 +36,9 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const clickHandler = () =>{
+const clickHandler = () => {
   navigate("/firstLevel");
-}
+};
 
 export default function Album(props) {
   const classes = useStyles();
@@ -50,7 +50,12 @@ export default function Album(props) {
       <Header user={user} logout={logout} />
       <main>
         {/* Hero unit */}
-        <Button className="get-started" variant="contained" color="primary" onClick={clickHandler}>
+        <Button
+          className="get-started"
+          variant="contained"
+          color="primary"
+          onClick={clickHandler}
+        >
           Get Started
         </Button>
         <img className="dashboardMain" src={DashboardMain} />
@@ -58,9 +63,24 @@ export default function Album(props) {
         <Container className={classes.cardGrid} maxWidth="md">
           {/* End hero unit */}
           <Grid container spacing={4}>
-            <Level image={Variable} title="Level1" description="description1" />
-            <Level image={If} title="Level2" description="description2" />
-            <Level image={Loop} title="Level3" description="description3" />
+            <Level
+              image={Variable}
+              title="Level1"
+              description="description1"
+              redirect="/firstLevel"
+            />
+            <Level
+              image={If}
+              title="Level2"
+              description="description2"
+              redirect="/secondLevel"
+            />
+            <Level
+              image={Loop}
+              title="Level3"
+              description="description3 "
+              redirect="/thirdLevel"
+            />
           </Grid>
         </Container>
       </main>

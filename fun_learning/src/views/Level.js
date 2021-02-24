@@ -8,6 +8,7 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
 import Variable from "../static/img/variable_icon.png";
 import Grid from "@material-ui/core/Grid";
+import { navigate } from "@reach/router";
 
 const useStyles = makeStyles((theme) => ({
   cardGrid: {
@@ -26,11 +27,17 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
 }));
+
 const Header = (props) => {
   const classes = useStyles();
   const logOut = () => {
     props.logout();
   };
+
+  const playHandler = () => {
+    navigate(props.redirect);
+  };
+
   return (
     <Grid item xs={12} sm={6} md={4}>
       <Card className={classes.card}>
@@ -46,7 +53,7 @@ const Header = (props) => {
           <Typography>{props.description}</Typography>
         </CardContent>
         <CardActions>
-          <Button size="small" className="play-button">
+          <Button size="small" className="play-button" onClick={playHandler}>
             Play
           </Button>
         </CardActions>
