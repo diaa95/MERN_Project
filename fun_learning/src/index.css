@@ -113,8 +113,9 @@ textarea#code {
   display: inline-block;
 }
 
-.level-description {
-  text-align: left;
+.level-description,
+.app-description {
+  text-align: left !important;
 }
 
 .SoundButton{
