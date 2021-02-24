@@ -6,7 +6,6 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import Typography from "@material-ui/core/Typography";
-import Variable from "../static/img/variable_icon.png";
 import Grid from "@material-ui/core/Grid";
 import { navigate } from "@reach/router";
 
