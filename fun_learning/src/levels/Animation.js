@@ -1,6 +1,7 @@
 import React from 'react';
 import ScriptTag from 'react-script-tag';
 import Down1 from '../static/img/down1.png'
+import Right1 from '../static/img/right1.png'
 import CardMedia from "@material-ui/core/CardMedia";
 import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
@@ -16,34 +17,53 @@ const useStyles = makeStyles((theme) => ({
         paddingBottom: theme.spacing(8),
     },
     card: {
-        height: "100%",
-        display: "flex",
-        flexDirection: "column",
-    },
-    cardMedia: {
-        height: "20px",
-        width:"20px",
+        top: "0",
+        left: "0",
+        height: "500px",
+        width: "500px",
+        display: "Grid",
+        gridTemplateColumns: "repeat(10, 60px)",
+        gridTemplateRows: "repeat(10, 90px)",
 
+        // flexDirection: "column",
     },
     cardContent: {
         flexGrow: 1,
     },
+    divClass:{
+        outline: "1px solid black"
+    }
 }));
 const Animation =(props)=>{
     const classes = useStyles();
+
+    const styles ={
+        position : {
+            height: "90px",
+            width:"60px",
+            gridArea: '2/3/3/4',
+            backgroundImage: "url('/img/right1.png')",
+            backgroundRepeat: 'no-repeat'
+
+        }
+    }
         return (
             <div>
                 <div id="background">
-                    <div id="character">x</div>
-                    <Card className={classes.card}>
-                        <CardMedia
-                            className={classes.cardMedia}
-                            image={Down1}
-                            title={"Image title"}
-                        />
-                    </Card>
+
+                    <div className={classes.card}>
+                        <div id={"character"} style={styles.position}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div>
+                        <div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div>
+                        <div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div>
+                        <div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div>
+                        <div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div>
+                        <div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div>
+                        <div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div>
+                        <div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div>
+                        <div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div>
+
+                    </div>
                 </div>
-                <ScriptTag type="text/javascript" id="code" src="script.js"/>
             </div>
         );
 }
