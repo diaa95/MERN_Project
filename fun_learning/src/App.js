@@ -10,7 +10,8 @@ import { connect } from "react-redux";
 import FirstLevelPage from "./levels/FirstLevelPage";
 import SecondLevelPage from "./levels/SecondLevelPage";
 import ThirdLevelPage from "./levels/ThirdLevelPage";
-import SecondLevel from "./levels/SecondLevel";
+import AnimationFirstLevel from "./levels/AnimationFirstLevel";
+import Comical from "./levels/Comical";
 
 const App = (props) => {
   // const [registered, setRegistered] = useState(false);
@@ -60,22 +61,8 @@ const App = (props) => {
       ) : (
         <Router>
           <Dashboard path={"/"} user={props.user} logout={logout} />
-          <FirstLevelPage
-            path={"firstLevel"}
-            user={props.user}
-            logout={logout}
-          />
-          <SecondLevelPage
-            path={"secondLevel"}
-            user={props.user}
-            logout={logout}
-          />
-          <ThirdLevelPage
-            path={"thirdLevel"}
-            user={props.user}
-            logout={logout}
-          />
-          <SecondLevel path={"/secondLevel"} />
+          <Comical path={'/comics'}/>
+          <AnimationFirstLevel path={"/AnimationFirstLevel"} />
         </Router>
       )}
     </div>
