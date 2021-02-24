@@ -34,7 +34,7 @@ Blockly.JavaScript['Maze_moveForward'] = function(block) {
 Blockly.JavaScript['maze_turn'] = function(block) {
     // Generate JavaScript for turning left or right.
     var dir = block.getFieldValue('DIR');
-    return dir + '(\'block_id_' + block.id + '\');\n';
+    return 'turn' + '("'+ dir + '");\n';
 };
 Blockly.JavaScript['maze_if'] = function(block) {
     // Generate JavaScript for 'if' conditional if there is a path.
