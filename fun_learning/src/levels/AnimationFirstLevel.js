@@ -23,6 +23,7 @@
 
 import React from 'react';
 
+
 import BlocklyComponent, { Block } from '../Blockly';
 
 import BlocklyJS from 'blockly/javascript';
@@ -31,41 +32,39 @@ import './../blocks/customblocks';
 import './../generator/generator';
 import ScriptTag from 'react-script-tag';
 import Animation from "./Animation";
+import {navigate} from "@reach/router";
+// import ScriptText from "../../public/script.txt";
 
-class FirstLevel extends React.Component {
+class AnimationFirstLevel extends React.Component {
     constructor(props) {
         super(props);
         this.simpleWorkspace = React.createRef();
-        this.state = {script: ''};
+        this.state = {script: "", clicked: false};
     }
 
-    generateCode = () => {
-        document.getElementById("form").submit();
-    }
-    submitHandler = (e) =>{
-        e.preventDefault();
-        var code = BlocklyJS.workspaceToCode(
-            this.simpleWorkspace.current.workspace
-        );
-        document.getElementById("code").innerHTML += code;
-        // console.log(e.target.code.value);
-        console.log(this.state);
-        this.setState({script: code});
+    generateCode = () =>{
+        fetch("script.txt")
+            .then((r)=>r.text())
+            .then((text)=> {
+                let code = text;
 
-    }
-    moveForward = ()=>{
-        console.log(this.state);
-    }
+                code += BlocklyJS.workspaceToCode(
+                    this.simpleWorkspace.current.workspace
+                );
+                console.log(code);
+                this.setState({script: code, clicked: true});
+            })
+       }
+   reset =()=>{
+        window.location.reload();
+   }
 
     render() {
         return (
             <div>
-                <form id={'form'} onSubmit={ this.submitHandler}>
-                    <ScriptTag type="text/javascript" id="code">
-                    </ScriptTag>
-                    <button type={'submit'}>Convert</button>
-                </form>
-                <Animation/>
+                {!this.state.clicked?<button onClick={this.generateCode}>Submit</button>:<button onClick={this.reset}>Reset</button>}
+                <ScriptTag type="text/javascript" id={"code"}>{this.state.script}</ScriptTag>
+                <Animation clicked={this.state.clicked}/>
                 <BlocklyComponent ref={this.simpleWorkspace}
                                   readOnly={false} trashcan={true} media={'media/'}
                                   move={{
@@ -86,4 +85,4 @@ class FirstLevel extends React.Component {
     }
 }
 
-export default FirstLevel;
+export default AnimationFirstLevel;

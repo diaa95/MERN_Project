@@ -103,8 +103,8 @@ Blockly.Blocks['maze_turn'] = {
    */
   init: function() {
     var DIRECTIONS =
-        [['Turn left', 'turnLeft'],
-          ['Turn right', 'turnRight']];
+        [['Turn left', 'left'],
+          ['Turn right', 'right']];
     // Append arrows to direction messages.
     DIRECTIONS[0][0] += ' \u21BA';
     DIRECTIONS[1][0] += ' \u21BB';
