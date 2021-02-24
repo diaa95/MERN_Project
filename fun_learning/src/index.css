@@ -73,3 +73,45 @@ span.sr-only,
 ol.carousel-indicators {
   display: none;
 }
+
+.level-image {
+  width: 50%;
+  margin: 20px;
+  float: right;
+  display: inline-block;
+}
+
+/* .App {
+  text-align: left;
+}
+
+
+div {
+  display: inline;
+} */
+
+rect.blocklyMainBackground {
+  width: 9000px !important;
+  height: 900px !important;
+  fill: #bbd7ae !important;
+}
+
+.blocklyToolboxDiv {
+  background-color: #ebcd8f !important;
+}
+
+pre#generated-xml {
+  display: none;
+}
+
+textarea#code {
+  display: none;
+}
+
+.makeStyles-fillHeight-8 {
+  display: inline-block;
+}
+
+.level-description {
+  text-align: left;
+}

@@ -7,9 +7,10 @@ import { navigate, Router } from "@reach/router";
 import axios from "axios";
 import Home from "./views/Home";
 import { connect } from "react-redux";
-import FirstLevel from './levels/FirstLevel';
+import FirstLevelPage from "./levels/FirstLevelPage";
+import SecondLevelPage from "./levels/SecondLevelPage";
+import ThirdLevelPage from "./levels/ThirdLevelPage";
 import SecondLevel from "./levels/SecondLevel";
-
 
 const App = (props) => {
   // const [registered, setRegistered] = useState(false);
@@ -36,45 +37,57 @@ const App = (props) => {
 
   const logout = () => {
     axios
-        .post(
-            "http://localhost:8000/api/logout",
-            { logOut: "logout" },
-            { withCredentials: true }
-        )
-        .then(() => {
-          props.logout();
-        })
-
+      .post(
+        "http://localhost:8000/api/logout",
+        { logOut: "logout" },
+        { withCredentials: true }
+      )
+      .then(() => {
+        props.logout();
+      });
   };
 
   return (
-      <div className="App">
-        {!props.user._id ? (
-            <>
-
-              <Router>
-                <Home path={"/"} />
-                <Registration path={"/register"} />
-                <Login path={"/login"} />
-              </Router>
-            </>
-        ) : (
-            <Router>
-            <Dashboard path={'/'} user={props.user} logout={logout} />
-            <FirstLevel path={'firstLevel'} user={props.user}/>
-            <SecondLevel path={'/secondLevel'} />
-            </Router>
-        )}
-      </div>
+    <div className="App">
+      {!props.user._id ? (
+        <>
+          <Router>
+            <Home path={"/"} />
+            <Registration path={"/register"} />
+            <Login path={"/login"} />
+          </Router>
+        </>
+      ) : (
+        <Router>
+          <Dashboard path={"/"} user={props.user} logout={logout} />
+          <FirstLevelPage
+            path={"firstLevel"}
+            user={props.user}
+            logout={logout}
+          />
+          <SecondLevelPage
+            path={"secondLevel"}
+            user={props.user}
+            logout={logout}
+          />
+          <ThirdLevelPage
+            path={"thirdLevel"}
+            user={props.user}
+            logout={logout}
+          />
+          <SecondLevel path={"/secondLevel"} />
+        </Router>
+      )}
+    </div>
   );
-}
-const mapStateToProps = state => {
+};
+const mapStateToProps = (state) => {
   return {
-    user: state.user
+    user: state.user,
   };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
     logout: () => dispatch({ type: "LOG_OUT" }),
   };
