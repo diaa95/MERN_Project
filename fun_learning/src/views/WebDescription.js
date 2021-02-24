@@ -7,7 +7,7 @@ const useStyles = makeStyles((theme) => ({
   heroContent: {
     padding: "0 !important",
     backgroundColor: "#ebcd8f !important",
-    margin:0
+    margin: 0,
   },
 }));
 
@@ -26,8 +26,14 @@ const Description = () => {
           Young Coder
         </Typography>
         <Typography variant="h5" align="center" color="textSecondary" paragraph>
-          Code is Language teaches children how to communicate and teaches logical thinking. Language also strengthens both verbal and and written skills.  Children should be exposed to different languages at an early age. It helps them to understand the world around them better. Coding has a language all its own.
+          Code is Language teaches children how to communicate and teaches
+          logical thinking. Language also strengthens both verbal and and
+          written skills. Children should be exposed to different languages at
+          an early age. It helps them to understand the world around them
+          better. Coding has a language all its own.
         </Typography>
+        <br />
+        <br />
       </Container>
     </div>
   );
