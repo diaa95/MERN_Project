@@ -18,6 +18,8 @@ import Header from "./Header";
 import Description from "./LevelsDescription";
 import Level from "./Level";
 import {navigate} from "@reach/router";
+import CardForLevel from "./CardForLevel"
+
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -48,6 +50,7 @@ export default function Album(props) {
     <React.Fragment>
       <CssBaseline />
       <Header user={user} logout={logout} />
+     
       <main>
         {/* Hero unit */}
         <Button className="get-started" variant="contained" color="primary" onClick={clickHandler}>
@@ -55,8 +58,10 @@ export default function Album(props) {
         </Button>
         <img className="dashboardMain" src={DashboardMain} />
         <Description />
+        <CardForLevel/>
         <Container className={classes.cardGrid} maxWidth="md">
           {/* End hero unit */}
+          
           <Grid container spacing={4}>
             <Level image={Variable} title="Level1" description="description1" />
             <Level image={If} title="Level2" description="description2" />
@@ -64,6 +69,7 @@ export default function Album(props) {
           </Grid>
         </Container>
       </main>
+     
       <Footer />
     </React.Fragment>
   );
