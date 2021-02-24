@@ -20,7 +20,12 @@ const reducer = (state = initialState, action) => {
             newState.user = {};
             navigate("/login");
             break;
+        case "UPGRADE":
+            newState.user = action.user;
+            cookies.set("user", newState.user);
+            break;
     }
+
     return newState;
 };
 
