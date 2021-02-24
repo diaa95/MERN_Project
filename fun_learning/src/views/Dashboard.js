@@ -11,14 +11,14 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import DashboardMain from "../static/img/dashboard_main.jpg";
-import Variable from "../static/img/variable_icon.png";
+import Variable from "../static/img/variable.png";
 import If from "../static/img/if_icon.png";
 import Loop from "../static/img/loop_icon.png";
 import Header from "./Header";
 import Description from "./LevelsDescription";
 import Level from "./Level";
-import {navigate} from "@reach/router";
-import CardForLevel from "./CardForLevel"
+import { navigate } from "@reach/router";
+import CardForLevel from "./CardForLevel";
 // import { navigate } from "@reach/router";
 
 const useStyles = makeStyles((theme) => ({
@@ -54,7 +54,7 @@ export default function Album(props) {
     <React.Fragment>
       <CssBaseline />
       <Header user={user} logout={logout} />
-     
+
       <main>
         {/* Hero unit */}
         <Button
@@ -67,33 +67,33 @@ export default function Album(props) {
         </Button>
         <img className="dashboardMain" src={DashboardMain} />
         <Description />
-        <CardForLevel/>
+        {/* <CardForLevel /> */}
         <Container className={classes.cardGrid} maxWidth="md">
           {/* End hero unit */}
-          
+
           <Grid container spacing={4}>
             <Level
               image={Variable}
-              title="Level1"
-              description="description1"
-              redirect="/firstLevel"
+              title="Level 1"
+              description="Challenges that help you to understand main concepts in coding"
+              redirect="/comics"
             />
             <Level
               image={If}
-              title="Level2"
-              description="description2"
-              redirect="/secondLevel"
+              title="Level 2"
+              description="Some gaming challenges based on the concepts that we learned in the first level"
+              redirect="/animation"
             />
             <Level
               image={Loop}
-              title="Level3"
-              description="description3 "
-              redirect="/thirdLevel"
+              title="Level 3"
+              description="Musical game to build some music using blocks"
+              redirect="/sound"
             />
           </Grid>
         </Container>
       </main>
-     
+
       <Footer />
     </React.Fragment>
   );

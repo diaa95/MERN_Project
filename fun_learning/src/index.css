@@ -81,6 +81,7 @@ ol.carousel-indicators {
   display: inline-block;
 }
 
+
 /* .App {
   text-align: left;
 }
@@ -100,18 +101,36 @@ rect.blocklyMainBackground {
   background-color: #ebcd8f !important;
 }
 
-pre#generated-xml {
-  display: none;
-}
+/*pre#generated-xml {*/
+/*  display: none;*/
+/*}*/
 
-textarea#code {
-  display: none;
-}
+/*textarea#code {*/
+/*  display: none;*/
+/*}*/
 
 .makeStyles-fillHeight-8 {
   display: inline-block;
 }
 
-.level-description {
-  text-align: left;
+.level-description,
+.app-description {
+  text-align: left !important;
+}
+
+.injectionDiv {
+  width: 50%;
+  height: 200%;
+  border: 1px solid red;
+}
+
+div#background {
+  display: flex;
+  float: right;
+  width: 50%;
+  height: 50%;
+}
+
+.App {
+  text-align: unset !important;
 }

@@ -31,50 +31,33 @@ import Marker from "../static/img/marker.png";
 // Since we're using json to initialize the field, we'll need to import it.
 import '../fields/BlocklyReactField';
 
-var testReactField = {
-  "type": "test_react_field",
-  "message0": "custom field %1",
+var SoundBlockField =   {
+  "type": "play_sound",
+  "message0": "Play %1",
   "args0": [
     {
-      "type": "field_react_component",
-      "name": "FIELD",
-      "text": "Click me"
-    },
-  ],
-  "previousStatement": null,
-  "nextStatement": null,
-};
-
-Blockly.Blocks['test_react_field'] = {
-  init: function() {
-    this.jsonInit(testReactField);
-    this.setStyle('loop_blocks');
-  }
-};
-
-
-var finallyCustom = {
-  "type": "finally_custom",
-  "message0": "%1 %2",
-  "args0": [
-    {
-      "type": "input_dummy"
-    },
-    {
-      "type": "input_statement",
-      "name": "NAME"
+      "type": "field_dropdown",
+      "name": "VALUE",
+      "options": [
+        ["C4", "sounds/c4.m4a"],
+        ["D4", "sounds/d4.m4a"],
+        ["E4", "sounds/e4.m4a"],
+        ["F4", "sounds/f4.m4a"],
+        ["G4", "sounds/g4.m4a"],
+        ["A5", "sounds/a5.m4a"],
+        ["B5", "sounds/b5.m4a"],
+        ["C5", "sounds/c5.m4a"]
+      ]
     }
   ],
   "previousStatement": null,
   "nextStatement": null,
-  "colour": 230,
-  "tooltip": "this is a tip",
-  "helpUrl": "'url'"
+  "colour": 355,
 }
 
-Blockly.Blocks['finally_custom'] = {
+Blockly.Blocks['play_sound'] = {
   init: function() {
-    this.jsonInit(finallyCustom);
+    this.jsonInit(SoundBlockField);
     this.setStyle('loop_blocks');
   }
 };
@@ -164,6 +147,23 @@ Blockly.Blocks['maze_ifElse'] = {
     this.setTooltip('Maze_ifElseTooltip');
     this.setPreviousStatement(true);
     this.setNextStatement(true);
+  }
+};
+
+Blockly.Blocks['maze_forever'] = {
+  /**
+   * Block for repeat loop.
+   * @this {Blockly.Block}
+   */
+  init: function() {
+    this.setColour(120);
+    this.appendDummyInput()
+        .appendField('repeat until')
+        .appendField(new Blockly.FieldImage(Marker, 12, 16));
+    this.appendStatementInput('DO')
+        .appendField('Do');
+    this.setPreviousStatement(true);
+    this.setTooltip('Maze_whileTooltip');
   }
 };
 
