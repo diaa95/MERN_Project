@@ -13,6 +13,7 @@ import ThirdLevelPage from "./levels/ThirdLevelPage";
 import AnimationFirstLevel from "./levels/AnimationFirstLevel";
 import Comical from "./levels/Comical";
 import AnimationGuide from "./levels/AnimationGuide";
+import SoundGuide from "./levels/SoundGuide";
 
 const App = (props) => {
   // const [registered, setRegistered] = useState(false);
@@ -64,6 +65,7 @@ const App = (props) => {
           <Dashboard path={"/"} user={props.user} logout={logout} />
           <Comical path={'/comics'}/>
           <AnimationGuide path={"/animation"} />
+          <SoundGuide path={"/sound"}/>
         </Router>
       )}
     </div>

@@ -11,9 +11,9 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import DashboardMain from "../static/img/dashboard_main.jpg";
-import Variable from "../static/img/variable_icon.PNG";
-import If from "../static/img/if_icon.PNG";
-import Loop from "../static/img/loop_icon.PNG";
+import Variable from "../static/img/variable.png";
+import If from "../static/img/if_icon.png";
+import Loop from "../static/img/loop_icon.png";
 import Header from "./Header";
 import Description from "./LevelsDescription";
 import Level from "./Level";
@@ -78,13 +78,13 @@ export default function Album(props) {
               image={If}
               title="Level 2"
               description="Some gaming challenges based on the concepts that we learned in the first level"
-              redirect="/secondLevel"
+              redirect="/animation"
             />
             <Level
               image={Loop}
               title="Level 3"
               description="Musical game to build some music using blocks"
-              redirect="/thirdLevel"
+              redirect="/sound"
             />
           </Grid>
         </Container>

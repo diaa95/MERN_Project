@@ -1,0 +1,26 @@
+
+
+const MusicMaker = {
+  queue_: [],
+  player_: new Audio(),
+  ended: false,
+  queueSound: function(soundUrl) {
+    this.queue_.push(soundUrl);
+  },
+  play: function() {
+      var index = 1;
+      var audio = new Audio();
+      var newQueue = this.queue_;
+      audio.src=newQueue[0];
+      audio.play();
+
+      audio.onended = function() {
+          if(index < newQueue.length){
+              audio.src= newQueue[index];
+              audio.play();
+              index++;
+          }
+      };
+  }
+ };
+
