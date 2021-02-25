@@ -91,8 +91,6 @@ div {
 } */
 
 rect.blocklyMainBackground {
-  width: 9000px !important;
-  height: 900px !important;
   fill: #bbd7ae !important;
 }
 
@@ -116,18 +114,30 @@ textarea#code {
 .app-description {
   text-align: left !important;
 }
+#blockly_animation_sub {
+  display: block;
+  width: 832px;
+  height: 500px;
+}
 
-/* #blockly_animation .injectionDiv {
-  width: 50%;
-  height: 200%;
-  border: 1px solid red;
-} */
+#blocklyDiv{
+  height: 540px !important;
+  width: 50% !important;
+  bottom: inherit !important;
+}
+
+#blocklyDiv .injectionDiv {
+  width: 100%;
+  overflow: visible !important;
+}
+
+#blocklyDiv div.makeStyles-fillHeight-8 {
+  width: 600px !important;
+  height: 400px !important;
+}
 
 div#background {
-  display: flex;
-  float: right;
-  width: 50%;
-  height: 50%;
+  height: 540px;
 }
 
 .App {
@@ -146,3 +156,10 @@ div#background {
 div.makeStyles-cardGrid-4 {
   display: none;
 }
+
+#blockly_animation_container {
+  width: auto;
+  display: flex;
+  justify-content: space-around;
+}
+
