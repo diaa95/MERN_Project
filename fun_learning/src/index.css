@@ -81,7 +81,6 @@ ol.carousel-indicators {
   display: inline-block;
 }
 
-
 /* .App {
   text-align: left;
 }
@@ -101,13 +100,13 @@ rect.blocklyMainBackground {
   background-color: #ebcd8f !important;
 }
 
-/*pre#generated-xml {*/
-/*  display: none;*/
-/*}*/
+pre#generated-xml {
+  display: none;
+}
 
-/*textarea#code {*/
-/*  display: none;*/
-/*}*/
+textarea#code {
+  display: none;
+}
 
 .makeStyles-fillHeight-8 {
   display: inline-block;
@@ -118,11 +117,11 @@ rect.blocklyMainBackground {
   text-align: left !important;
 }
 
-.injectionDiv {
+/* #blockly_animation .injectionDiv {
   width: 50%;
   height: 200%;
   border: 1px solid red;
-}
+} */
 
 div#background {
   display: flex;
@@ -133,4 +132,17 @@ div#background {
 
 .App {
   text-align: unset !important;
+}
+
+#first-level-blockly div.makeStyles-fillHeight-8 {
+  width: 600px !important;
+  height: 400px !important;
+}
+
+#first-level-blockly > div.makeStyles-fillHeight-8 {
+  margin-top: -100px;
+}
+
+div.makeStyles-cardGrid-4 {
+  display: none;
 }
