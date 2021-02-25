@@ -47,22 +47,16 @@ const Description = () => {
         <img className={classes.kidImage}  src="/img/codingMadeEasy.png"/>
 
         <strong>Coding Improves Academic Performance</strong><br />
-       
+
         <ul>
           <li> <strong> Math</strong>: Coding teaches kids to visualize abstract concepts, lets them apply math to real-world situations, and makes math fun and creative!</li>
           <li><strong> Writing: </strong>Kids who code understand the value of concision and planning, which results in better writing skills. Many kids even use Tynker as a medium for storytelling!</li>
           <li><strong> Creativity:</strong> Kids learn through experimentation and strengthen their brains when they code, allowing them to embrace their creativity.</li>
-       
-
-          
-
         </ul>
-
-
         </Typography >
 
-        
-    
+
+
         <br />
         <br />
       </Container>
