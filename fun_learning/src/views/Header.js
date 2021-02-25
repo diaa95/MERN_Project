@@ -6,6 +6,7 @@ import { makeStyles } from "@material-ui/core";
 import Link from "@material-ui/core/Link";
 import Button from "@material-ui/core/Button";
 import Logo from "../static/img/logo.png";
+import connect from "react-redux";
 
 const useStyles = makeStyles((theme) => ({
   /*  title: {

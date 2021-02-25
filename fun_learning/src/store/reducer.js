@@ -24,8 +24,6 @@ const reducer = (state = initialState, action) => {
             newState.user = action.user;
             cookies.set("user", newState.user);
             break;
-        
-        
     }
 
     return newState;

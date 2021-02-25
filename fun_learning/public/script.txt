@@ -4,7 +4,6 @@ function update(){
 document.getElementById("character").style.gridArea = (row - 1) +"/"+ (column - 1)+ "/"+ row +"/"+ column;
 document.getElementById("character").style.backgroundImage = "url('img/"+direction+step+".png')";
 console.log("anything");
-wait(1000);
 }
 
 function turn(dir) {

@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
         width: "500px",
         display: "Grid",
         gridTemplateColumns: "repeat(10, 60px)",
-        gridTemplateRows: "repeat(10, 90px)",
+        gridTemplateRows: "repeat(6, 90px)",
 
         // flexDirection: "column",
     },
@@ -48,21 +48,15 @@ const Animation =(props)=>{
         }
     }
         return (
-            <div>
-                <div id="background">
+            <div id="background">
+                <div className={classes.card}>
+                    <div id={"character"} style={styles.position}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div>
+                    <div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div>
+                    <div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div>
+                    <div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div>
+                    <div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div>
+                    <div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div>
 
-                    <div className={classes.card}>
-                        <div id={"character"} style={styles.position}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div>
-                        <div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div>
-                        <div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div>
-                        <div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div>
-                        <div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div>
-                        <div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div>
-                        <div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div>
-                        <div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div>
-                        <div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div><div className={classes.divClass}></div>
-
-                    </div>
                 </div>
             </div>
         );
