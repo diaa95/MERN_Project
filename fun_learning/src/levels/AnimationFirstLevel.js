@@ -149,7 +149,9 @@ class AnimationFirstLevel extends React.Component {
                   <Button onClick={this.generateCode}>Submit</Button>
               </div>
           ) : (
-              <button onClick={this.reset}>Reset</button>
+              <div style={{display: "flex", justifyContent: "space-around"}}>
+                  <Button onClick={this.reset}>Reset</Button>
+              </div>
           )}
       </div>
     );
