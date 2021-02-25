@@ -36,10 +36,10 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: theme.spacing(8),
     paddingBottom: theme.spacing(8),
   },
-  dashboardMain:{
-    margin:"0",
-    padding:"0"
-  }
+  dashboardMain: {
+    margin: "0",
+    padding: "0",
+  },
 }));
 
 const clickHandler = () => {

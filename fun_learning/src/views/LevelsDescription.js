@@ -14,7 +14,7 @@ const Description = () => {
   const classes = useStyles();
   return (
     <div className={classes.heroContent}>
-      <Container maxWidth="sm">
+      <Container maxWidth="md">
         <Typography
           component="h1"
           variant="h2"
@@ -25,12 +25,19 @@ const Description = () => {
           Young Coder
         </Typography>
         <Typography
-          variant="h5"
+          variant="h6"
           align="center"
           color="textSecondary"
           paragraph
           className="app-description"
         >
+          <img
+            src="/img/tynkerCodeBlocksPythonJavascript.png"
+            style={{ float: "right" }}
+          ></img>
+          <br />
+          <br />
+          <br />
           Our website aims to teach your child how to think logically, to
           prepare a powerful coder for the Future!
           <br />
@@ -40,7 +47,12 @@ const Description = () => {
           a small challenges, the challenges will be provided with a set of
           steps, which will lead you to the solution.
           <br />
-          These concepts are:
+          <br />
+          <br />
+          <br />
+          <br />
+          <img src="/img/learningToCode.png" style={{ float: "left" }}></img>
+          <span>These concepts are:</span>
           <br />
           <ul>
             <li>
@@ -48,6 +60,7 @@ const Description = () => {
               holds information that you can access.In computer programming, a
               variable has a name and contains a value
             </li>
+
             <li>
               In many programming languages, decisions (also called
               conditionals) take the form of an if-then construct. They start
