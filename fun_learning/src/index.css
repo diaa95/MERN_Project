@@ -100,9 +100,9 @@ rect.blocklyMainBackground {
   background-color: #ebcd8f !important;
 }
 
-pre#generated-xml {
+/* pre#generated-xml {
   display: none;
-}
+} */
 
 textarea#code {
   display: none;

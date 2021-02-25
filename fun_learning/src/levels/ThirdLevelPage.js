@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Footer from "../views/Footer";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
@@ -8,7 +8,7 @@ import Container from "@material-ui/core/Container";
 import Header from "../views/Header";
 import ReactBlockly from "react-blockly";
 import Blockly from "blockly";
-import Level1 from "../static/img/level1.png";
+import Level3 from "../static/img/level3.png";
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -47,10 +47,11 @@ const cards = [1, 2, 3];
 export default function Album(props) {
   const classes = useStyles();
   const { user, logout } = props;
+  const [result, setResult] = useState("");
 
-  // const initialXml = `<xml xmlns="https://developers.google.com/blockly/xml"><block type="lists_create_with" id="X*O*/n^|$]7:xiM4UNdj" x="140" y="125"><mutation items="0"></mutation></block></xml>`;
+  const initialXml = `<xml xmlns="https://developers.google.com/blockly/xml"><variables><variable id="s,o~Fq{.WT1~Gtn24*]}">Steps</variable></variables><block type="variables_set" id="-b+C,,dSEh3D,jP\`w9M/" x="128" y="150"><field name="VAR" id="s,o~Fq{.WT1~Gtn24*]}">Steps</field><value name="VALUE"><block type="math_number" id="[m:I.YlMsrtyL?b9q/RU"><field name="NUM">0</field></block></value></block></xml>`;
 
-  const initialXml = `<xml xmlns="https://developers.google.com/blockly/xml"></xml>`;
+  // const initialXml = `<xml xmlns="https://developers.google.com/blockly/xml"></xml>`;
 
   const toolboxCategories = [
     {
@@ -744,10 +745,15 @@ export default function Album(props) {
   function workspaceDidChange(workspace) {
     const newXml = Blockly.Xml.domToText(Blockly.Xml.workspaceToDom(workspace));
     document.getElementById("generated-xml").innerText = newXml;
+    setResult(newXml);
 
     const code = Blockly.JavaScript.workspaceToCode(workspace);
     document.getElementById("code").value = code;
   }
+
+  const submitHandler = () => {
+    props.Upgrade(result);
+  };
 
   return (
     <React.Fragment>
@@ -755,7 +761,7 @@ export default function Album(props) {
       <Header user={user} logout={logout} />
 
       <div className={classes.heroContent}>
-        <Container maxWidth="sm">
+        <Container maxWidth="md">
           <Typography
             component="h1"
             variant="h2"
@@ -763,38 +769,32 @@ export default function Album(props) {
             color="textPrimary"
             gutterBottom
           >
-            Variable Level
+            IF Statement Level
           </Typography>
           <Typography
-            variant="h5"
+            variant="h6"
             align="center"
             color="textSecondary"
             paragraph
           >
+            <img src="/img/textCoding.png" style={{ float: "right" }}></img>
             <p className="level-description">
-              What is a variable?
+              What is the loop?
               <br />
-              In coding world,we have something called a variable,it has a name
-              and contains a value.
-              <br />
-              <br />
-              Think about it as a box. If you labeled the box as Toys and put a
-              yo-yo inside it, Toys will be like the variable name, and yo-yo is
-              like value.
-              <br />
-              <br />
-              Variable can store a single type of value. Usually these are
-              numbers, text.
-              <br />
-              <br />
-              The kind of value that a variable can hold is also called a data
-              type. Now, let us look at 3 different data types – Numbers like
-              (1,2,100,-345), Strings like ("young coder", "hello"), and
-              Booleans like (true or false).
+              A loop is a programming structure that repeats a sequence of
+              instructions until a specific condition is met. Programmers use
+              loops to cycle through values, add sums of numbers, repeat
+              functions, and many other things.
               <br />
               <br />
               Now we will have a small challenge, that will make our young
-              programmer understands the concept of variable.
+              programmer understands the concept of the for loop.
+              <br />
+              <br />
+              A for-loop is a control flow statement for specifying iteration,
+              which allows code to be executed repeatedly. The name for-loop
+              comes from the word for, which is used as the keyword in many
+              programming languages to introduce a for-loop.
               <br />
               <br />
               These steps will help you:
@@ -822,12 +822,19 @@ export default function Album(props) {
         {/* End hero unit */}
         <Grid container spacing={4}></Grid>
       </Container>
-
-      <ReactBlockly
-        toolboxCategories={toolboxCategories}
-        initialXml={initialXml}
-        wrapperDivClassName={classes.fillHeight}
-        /* workspaceConfiguration={{
+      <div
+        style={{
+          display: "flex",
+          alignItems: "baseline",
+          justifyContent: "space-between",
+        }}
+      >
+        <div id="first-level-blockly">
+          <ReactBlockly
+            toolboxCategories={toolboxCategories}
+            initialXml={initialXml}
+            wrapperDivClassName={classes.fillHeight}
+            /* workspaceConfiguration={{
             grid: {
               spacing: 20,
               length: 3,
@@ -835,24 +842,31 @@ export default function Album(props) {
               snap: true,
             },
           }} */
-        workspaceDidChange={workspaceDidChange}
-      />
-      <img className="level-image" src={Level1} />
+            workspaceDidChange={workspaceDidChange}
+          />
+        </div>
+        <img height="400" src={Level3} />
+      </div>
 
-      <pre id="generated-xml" />
       <textarea
         id="code"
         style={{ height: "200px", width: "400px" }}
         value=""
+        onChange={(e) => setResult(e.target.value)}
       />
+      <div
+        style={{ display: "flex", justifyContent: "center", padding: "2px" }}
+      >
+        <button
+          className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+          type={"submit"}
+          onClick={submitHandler}
+        >
+          Submit
+        </button>
+      </div>
 
-      {/* <br />
       <pre id="generated-xml" />
-      <textarea
-        id="code"
-        style={{ height: "200px", width: "400px" }}
-        value=""
-      /> */}
       <Footer />
     </React.Fragment>
   );
