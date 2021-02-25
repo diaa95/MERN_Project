@@ -115,12 +115,13 @@ textarea#code {
   text-align: left !important;
 }
 #blockly_animation_sub {
-  display: block;
+  display: flex;
+  justify-content: flex-end;
   width: 832px;
   height: 500px;
 }
 
-#blocklyDiv{
+#blocklyDiv {
   height: 540px !important;
   width: 50% !important;
   bottom: inherit !important;
@@ -160,6 +161,5 @@ div.makeStyles-cardGrid-4 {
 #blockly_animation_container {
   width: auto;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
-
