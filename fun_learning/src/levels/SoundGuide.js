@@ -5,6 +5,8 @@ import Animation from "./Animation";
 import BlocklyComponent, { Block, Value, Shadow, Field } from "../Blockly";
 import BlocklyJS from "blockly/javascript";
 import Button from "@material-ui/core/Button";
+import Header from "../views/Header";
+import Footer from "../views/Footer";
 
 class SoundGuide extends React.Component {
   constructor(props) {
@@ -36,6 +38,7 @@ class SoundGuide extends React.Component {
   render() {
     return (
       <div>
+        <Header user={{ firstName: "Young Coder" }} logout="LogOut" />
         {!this.state.clicked ? (
           <div style={{ display: "flex", justifyContent: "space-around" }}>
             <Button style={{ margin: "2%" }} onClick={this.generateCode}>

@@ -98,9 +98,9 @@ rect.blocklyMainBackground {
   background-color: #ebcd8f !important;
 }
 
-/* pre#generated-xml {
+pre#generated-xml {
   display: none;
-} */
+}
 
 textarea#code {
   display: none;
@@ -154,9 +154,9 @@ div#background {
   margin-top: -100px;
 }
 
-div.makeStyles-cardGrid-4 {
+/* div.makeStyles-cardGrid-4 {
   display: none;
-}
+} */
 
 #blockly_animation_container {
   width: auto;
