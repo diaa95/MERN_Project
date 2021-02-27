@@ -825,10 +825,7 @@ export default function Album(props) {
           </Typography>
         </Container>
       </div>
-      <Container className={classes.cardGrid} maxWidth="md">
-        {/* End hero unit */}
-        <Grid container spacing={4}></Grid>
-      </Container>
+
       <div
         style={{
           display: "flex",

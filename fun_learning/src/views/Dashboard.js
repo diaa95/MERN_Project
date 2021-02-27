@@ -43,7 +43,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const clickHandler = () => {
-  navigate("/firstLevel");
+  navigate("/comics");
 };
 
 export default function Album(props) {
@@ -51,7 +51,7 @@ export default function Album(props) {
   const { user, logout } = props;
 
   return (
-    <React.Fragment>
+    <>
       <CssBaseline />
       <Header user={user} logout={logout} />
 
@@ -95,6 +95,6 @@ export default function Album(props) {
       </main>
 
       <Footer />
-    </React.Fragment>
+    </>
   );
 }

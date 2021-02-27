@@ -66,93 +66,92 @@ class AnimationFirstLevel extends React.Component {
   render() {
     return (
       <div>
-          <Header user={this.props.user} logout={this.props.logout}/>
-          <Container maxWidth="md">
-              <Typography
-                  component="h1"
-                  variant="h2"
-                  align="center"
-                  color="textPrimary"
-                  gutterBottom
-              >
-                  Variable Level
-              </Typography>
-              <Typography
-                  variant="h6"
-                  align="center"
-                  color="textSecondary"
-                  paragraph
-              >
-                  <img src="/img/textCoding.png" style={{ float: "right" }}></img>
-                  <p className="level-description">
-                      What is a variable?
-                      <br />
-                      In coding world,we have something called a variable,it has a name
-                      and contains a value.
-                      <br />
-                      <br />
-                      Think about it as a box. If you labeled the box as Toys and put a
-                      yo-yo inside it, Toys will be like the variable name, and yo-yo is
-                      like value.
-                      <br />
-                      <br />
-                      Variable can store a single type of value. Usually these are
-                      numbers, text.
-                      <br />
-                      <br />
-                      The kind of value that a variable can hold is also called a data
-                      type. Now, let us look at 3 different data types – Numbers like
-                      (1,2,100,-345), Strings like ("young coder", "hello"), and
-                      Booleans like (true or false).
-                      <br />
-                      <br />
-                      Now we will have a small challenge, that will make our young
-                      programmer understands the concept of variable.
-                      <br />
-                      <br />
-                      These steps will help you:
-                      <br />
-                  </p>
-              </Typography>
-          </Container>
+        <Header user={this.props.user} logout={this.props.logout} />
+        <Container maxWidth="md">
+          <Typography
+            component="h1"
+            variant="h2"
+            align="center"
+            color="textPrimary"
+            gutterBottom
+          >
+            Variable Level
+          </Typography>
+          <Typography
+            variant="h6"
+            align="center"
+            color="textSecondary"
+            paragraph
+          >
+            <img src="/img/textCoding.png" style={{ float: "right" }}></img>
+            <p className="level-description">
+              What is a variable?
+              <br />
+              In coding world,we have something called a variable,it has a name
+              and contains a value.
+              <br />
+              <br />
+              Think about it as a box. If you labeled the box as Toys and put a
+              yo-yo inside it, Toys will be like the variable name, and yo-yo is
+              like value.
+              <br />
+              <br />
+              Variable can store a single type of value. Usually these are
+              numbers, text.
+              <br />
+              <br />
+              The kind of value that a variable can hold is also called a data
+              type. Now, let us look at 3 different data types – Numbers like
+              (1,2,100,-345), Strings like ("young coder", "hello"), and
+              Booleans like (true or false).
+              <br />
+              <br />
+              Now we will have a small challenge, that will make our young
+              programmer understands the concept of variable.
+              <br />
+              <br />
+              Build the blocks in a way to let the ninja reaching the dojo.
+            </p>
+          </Typography>
+        </Container>
         <ScriptTag type="text/javascript" id={"code"}>
           {this.state.script}
         </ScriptTag>
-          <div id={"blockly_animation_container"}>
-              <div>
-              <Animation clicked={this.state.clicked} />
-              </div>
-                <div id={"blockly_animation_sub"}>
-                    <BlocklyComponent
-                        ref={this.simpleWorkspace}
-                        readOnly={false}
-                        trashcan={true}
-                        media={"media/"}
-                        move={{
-                            scrollbars: false,
-                            drag: true,
-                            wheel: true,
-                        }}
-                        initialXml={`<xml xmlns="http://www.w3.org/1999/xhtml">
-                                                                                 <block type="Maze_moveForward" x="0" y="0"></block></xml>`}
-                    >
-                        <Block type="Maze_moveForward" />
-                        <Block type="maze_turn" />
-                        <Block type="maze_if" />
-                        <Block type="maze_ifElse" />
-                        <Block type="maze_forever" />
-                    </BlocklyComponent>
-                </div>
+        <div id={"blockly_animation_container"}>
+          <div>
+            <Animation clicked={this.state.clicked} />
           </div>
-          {!this.state.clicked ? (
-              <div style={{display: "flex", justifyContent: "space-around"}}>
-                  <Button onClick={this.generateCode}>Submit</Button>
-              </div>
-          ) : (
-              <div style={{display: "flex", justifyContent: "space-around"}}>
-                  <Button onClick={this.reset}>Reset</Button>
-              </div>
-          )}
+          <div id={"blockly_animation_sub"}>
+            <BlocklyComponent
+              ref={this.simpleWorkspace}
+              readOnly={false}
+              trashcan={true}
+              media={"media/"}
+              move={{
+                scrollbars: false,
+                drag: true,
+                wheel: true,
+              }}
+              initialXml={`<xml xmlns="http://www.w3.org/1999/xhtml">
+                                                                                 <block type="Maze_moveForward" x="0" y="0"></block></xml>`}
+            >
+              <Block type="Maze_moveForward" />
+              <Block type="maze_turn" />
+              <Block type="maze_if" />
+              <Block type="maze_ifElse" />
+              <Block type="maze_forever" />
+            </BlocklyComponent>
+          </div>
+        </div>
+        {!this.state.clicked ? (
+          <div style={{ display: "flex", justifyContent: "space-around" }}>
+            <Button onClick={this.generateCode}>Submit</Button>
+          </div>
+        ) : (
+          <div style={{ display: "flex", justifyContent: "space-around" }}>
+            <Button onClick={this.reset}>Reset</Button>
+          </div>
+        )}
       </div>
     );
   }

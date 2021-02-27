@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Footer from "../views/Footer";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
@@ -8,7 +8,7 @@ import Container from "@material-ui/core/Container";
 import Header from "../views/Header";
 import ReactBlockly from "react-blockly";
 import Blockly from "blockly";
-import Level1 from "../static/img/level1.png";
+import Level2 from "../static/img/level2.png";
 
 const useStyles = makeStyles((theme) => ({
   icon: {
@@ -47,10 +47,12 @@ const cards = [1, 2, 3];
 export default function Album(props) {
   const classes = useStyles();
   const { user, logout } = props;
+  const [result, setResult] = useState("");
 
-  // const initialXml = `<xml xmlns="https://developers.google.com/blockly/xml"><block type="lists_create_with" id="X*O*/n^|$]7:xiM4UNdj" x="140" y="125"><mutation items="0"></mutation></block></xml>`;
+  const initialXml =
+    '<xml xmlns="https://developers.google.com/blockly/xml"><block type="controls_if" id="0Kbe7SWQIqlwjZc8Zk!R" x="107" y="30"><value name="IF0"><block type="text_isEmpty" id="*jxZF_QCakaII6Pq67M7"><value name="VALUE"><shadow type="text" id="@377;^is73raceb4YQ~F"><field name="TEXT"></field></shadow></value></block></value><statement name="DO0"><block type="text_print" id="ZNKreuMs^U*a^p45w$XJ"><value name="TEXT"><shadow type="text" id="4~=@;^vMTI3B9V}V]7)}"><field name="TEXT"></field></shadow></value></block></statement><next><block type="controls_if" id="*Zhi/Aq:39zeWn8KDm4E"><value name="IF0"><block type="text_isEmpty" id="h:i00(s8_%B)3VL=)1Ez"><value name="VALUE"><shadow type="text" id="^Xhm^|]I@J[%v*1(A+Ar"><field name="TEXT"></field></shadow></value></block></value><statement name="DO0"><block type="text_print" id="@=Ss*tN];u1=f*W)/aP%"><value name="TEXT"><shadow type="text" id="7n66Y2jM0wxshEjLqwro"><field name="TEXT"></field></shadow></value></block></statement><next><block type="controls_if" id="P]]dd!(YDXVc80P?i]B*"><value name="IF0"><block type="text_isEmpty" id=")sCW6nN=}GWTYoDqV3oE"><value name="VALUE"><shadow type="text" id="NG`EX=/D%GCWWjAkuOx@"><field name="TEXT"></field></shadow></value></block></value><statement name="DO0"><block type="text_print" id="|l`.y)M3sGOz9Wcux[2?"><value name="TEXT"><shadow type="text" id="-i[Ss0x;ow/n)dDbWPTe"><field name="TEXT"></field></shadow></value></block></statement></block></next></block></next></block></xml>';
 
-  const initialXml = `<xml xmlns="https://developers.google.com/blockly/xml"></xml>`;
+  // const initialXml = `<xml xmlns="https://developers.google.com/blockly/xml"></xml>`;
 
   const toolboxCategories = [
     {
@@ -744,10 +746,15 @@ export default function Album(props) {
   function workspaceDidChange(workspace) {
     const newXml = Blockly.Xml.domToText(Blockly.Xml.workspaceToDom(workspace));
     document.getElementById("generated-xml").innerText = newXml;
+    setResult(newXml);
 
     const code = Blockly.JavaScript.workspaceToCode(workspace);
     document.getElementById("code").value = code;
   }
+
+  const submitHandler = () => {
+    props.Upgrade(result);
+  };
 
   return (
     <React.Fragment>
@@ -755,7 +762,7 @@ export default function Album(props) {
       <Header user={user} logout={logout} />
 
       <div className={classes.heroContent}>
-        <Container maxWidth="sm">
+        <Container maxWidth="md">
           <Typography
             component="h1"
             variant="h2"
@@ -763,50 +770,67 @@ export default function Album(props) {
             color="textPrimary"
             gutterBottom
           >
-            If Statement Level
+            IF Statement Level
           </Typography>
           <Typography
-            variant="h5"
+            variant="h6"
             align="center"
             color="textSecondary"
             paragraph
           >
+            <img src="/img/textCoding.png" style={{ float: "right" }}></img>
             <p className="level-description">
               What is an if statement?
               <br />
+              An if statement is a programming conditional statement that, if
+              proved true, performs a function or displays information. Below is
+              a general example of an if statement, not specific to any
+              particular programming language.
+              <br />
+              <br />
+              Now we will have a small challenge, that will make our young
+              programmer understands the concept of the if statement.
               <br />
               <br />
               These steps will help you:
               <br />
               <ol>
-                <li>Click on Variable tab below</li>
-                <li>Select create variable block</li>
-                <li>Type steps in the box that pops up</li>
-                <li>Select set steps to block</li>
-                <li>Click math tab and choose block with the number zero</li>
-                <li>Connect the new block to the first one</li>
+                <li>Click on Logic tab below</li>
+                <li>Select if-do block</li>
                 <li>
-                  Count the number of the steps between squirrel and Hazelnut
+                  Select from text tab the block with is empty and connect it in
+                  if part
                 </li>
                 <li>
-                  Type the number of the steps inside the block that contains
-                  zero
+                  Select from text tab print block and put it inside do part
+                </li>
+                <li>
+                  Fill the if part with the condition animal == the name of
+                  animal
+                </li>
+                <li>
+                  Fill the do part with the sentence feed it followed by the
+                  suitable food for that animal
                 </li>
               </ol>
             </p>
           </Typography>
         </Container>
       </div>
-      <Container className={classes.cardGrid} maxWidth="md">
-        {/* End hero unit */}
-        <Grid container spacing={4}></Grid>
-      </Container>
 
-      <ReactBlockly
-        toolboxCategories={toolboxCategories}
-        initialXml={initialXml}
-        wrapperDivClassName={classes.fillHeight}
-        /* workspaceConfiguration={{
+      <div
+        style={{
+          display: "flex",
+          alignItems: "baseline",
+          justifyContent: "space-between",
+        }}
+      >
+        <div id="first-level-blockly">
+          <ReactBlockly
+            toolboxCategories={toolboxCategories}
+            initialXml={initialXml}
+            wrapperDivClassName={classes.fillHeight}
+            /* workspaceConfiguration={{
             grid: {
               spacing: 20,
               length: 3,
@@ -814,24 +838,31 @@ export default function Album(props) {
               snap: true,
             },
           }} */
-        workspaceDidChange={workspaceDidChange}
-      />
-      <img className="level-image" src={Level1} />
+            workspaceDidChange={workspaceDidChange}
+          />
+        </div>
+        <img height="400" src={Level2} />
+      </div>
 
-      <pre id="generated-xml" />
       <textarea
         id="code"
         style={{ height: "200px", width: "400px" }}
         value=""
+        onChange={(e) => setResult(e.target.value)}
       />
+      <div
+        style={{ display: "flex", justifyContent: "center", padding: "2px" }}
+      >
+        <button
+          className="MuiButtonBase-root MuiButton-root MuiButton-contained MuiButton-containedPrimary"
+          type={"submit"}
+          onClick={submitHandler}
+        >
+          Submit
+        </button>
+      </div>
 
-      {/* <br />
       <pre id="generated-xml" />
-      <textarea
-        id="code"
-        style={{ height: "200px", width: "400px" }}
-        value=""
-      /> */}
       <Footer />
     </React.Fragment>
   );
