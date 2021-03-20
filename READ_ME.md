@@ -6,3 +6,5 @@
 - Nawal Dweik
 - Ahmad Salah
 
+![homePage](https://github.com/Nawal-Dweik/MERN_Project/blob/master/screenshots/homePage.PNG)
+
