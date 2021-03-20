@@ -22,14 +22,20 @@
 ![levels](https://github.com/Nawal-Dweik/MERN_Project/blob/master/screenshots/levels.PNG)
 
 ## Challenges level
+This level contains three challenges, each challenge has its own instructions which will help user to solve the challenge, only if the user entered the right solution it will take him into the next level, also all levels depends on building blocks in a logical way to reach the goal.
+*First challenge*
 ![level1](https://github.com/Nawal-Dweik/MERN_Project/blob/master/screenshots/level1.PNG)
+*Second challenge*
 ![level2](https://github.com/Nawal-Dweik/MERN_Project/blob/master/screenshots/level2.PNG)
+*Third challenge*
 ![level3](https://github.com/Nawal-Dweik/MERN_Project/blob/master/screenshots/level3.PNG)
 
 ## Animation level
+This level lets the user build the blocks to move the ninja.
 
 ![animation](https://github.com/Nawal-Dweik/MERN_Project/blob/master/screenshots/animation.PNG)
 
 ## Musical level
+This level lets the user build some musical notes using blocks.
 
 ![musical](https://github.com/Nawal-Dweik/MERN_Project/blob/master/screenshots/musical.PNG)
