@@ -800,21 +800,21 @@ export default function Album(props) {
               These steps will help you:
               <br />
               <ol>
-                <li>Click on Variable tab below</li>
-                <li>Select create variable block</li>
-                <li>Type steps in the box that pops up</li>
-                <li>Select set steps to block</li>
-                <li>Click math tab and choose block with the number zero</li>
-                <li>Connect the new block to the first one</li>
                 <li>
-                  Count the number of the steps between squirrel and Hazelnut
+                  The hamster wants to eat all the sunflower seeds, total number
+                  of the seeds is 100.
                 </li>
                 <li>
-                  Type the number of the steps inside the block that contains
-                  zero
+                  Using available blocks help the hamster to implement 'eat a
+                  seed' 100 times
+                </li>
+                <li>
+                  Hint : don't repeat the command 'eat a seed' 100 times
+                  manually, remember we now know that there is a for loop ;)
                 </li>
               </ol>
             </p>
+            <br />
           </Typography>
         </Container>
       </div>
