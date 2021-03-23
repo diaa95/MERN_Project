@@ -44,4 +44,3 @@ This level lets the user build the blocks to move the ninja.
 ## Musical level
 This level lets the user build some musical notes using blocks.
 
-![musical](https://github.com/Nawal-Dweik/MERN_Project/blob/master/screenshots/musical.PNG)
